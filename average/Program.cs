@@ -6,13 +6,20 @@ namespace average
     {
         static void Main(string[] args)
         {
-            Console.Write("fibonacci series length  : ");
+            /*
+            Kulanıcıdan alınan derinliğe göre fibonacci serisindeki rakamların ortalamasını alıp ekrana yazdıran uygulamayı yazınız.
+            */
+            Console.Write("Fibonacci series length  : ");
             int length  =Convert.ToInt32(Console.ReadLine());
 
             int[] fibonacciArray=FibonacciArray(length);
             double average=FibonacciAverage(fibonacciArray);
             Write(fibonacciArray,average);         
         }
+
+        /*
+        Kullanıcıdan alınan derinliğe göre dizi oluşturan metot
+        */
         public static int[] FibonacciArray (int length)
         {
             int num1=0,num2=1,sum=0;
@@ -28,7 +35,9 @@ namespace average
 
             return fib;
         }
-
+        /*
+        Gönderilen dizinin ortalamasını alan metot
+        */
         public static double FibonacciAverage (int[] array)
         {
             double average =0;
@@ -39,7 +48,9 @@ namespace average
             average=sum/array.Length;
             return average;
         }
-
+        /*
+        Sonuçları ekrana yazdıran metot
+        */
         public static void Write (int[] array , double average)
         {
             for(int i=0;i<array.Length;i++){
