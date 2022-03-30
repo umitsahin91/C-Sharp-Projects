@@ -1,7 +1,15 @@
 # Proje-2 Merge Sort
+## 1. Soru
+Dizinin sort türüne göre aşamalarını yazınız.
+- 16,21,11,8,12,22
+- 16,21,11    |  8,12,22
+- 16,21 | 11  |  8,12 | 22
+- 11,16,21    |  8,12,22
+- 8,11,12,16,21,22
+
+Big-O gösterimini yazınız: O(n*log(n))
+
 ## C# Kod Parçası
-
-
 ```
 void merge(int arr[], int l, int m, int r)
 {
