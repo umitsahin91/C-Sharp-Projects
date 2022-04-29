@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -44,6 +46,8 @@ namespace WebApi.Controllers
             try
             {
                 query.BookId = id;
+                GetBookDetailQueryValidator validations = new GetBookDetailQueryValidator();
+                validations.ValidateAndThrow(query);
                 result = query.Handler();
             }
             catch (Exception ex)
@@ -68,7 +72,13 @@ namespace WebApi.Controllers
             try
             {           
                 command.Model = newBook;
+                CreateBookCommandValidator validator = new CreateBookCommandValidator();
+                validator.ValidateAndThrow(command);
                 command.Handler();
+                //if (!result.IsValid)
+                //    result.Errors.ForEach(message => Console.WriteLine($"Property : {message.PropertyName} Eror Message : {message.ErrorMessage}"));
+                //else
+                //command.Handler();
             }
             catch (Exception ex)
             {
@@ -88,6 +98,8 @@ namespace WebApi.Controllers
             {
                 command.Model = updatedBook;
                 command.BookId = id;
+                UpdateBookCommandValidator validations = new UpdateBookCommandValidator();
+                validations.ValidateAndThrow(command);
                 command.Handler();
             }
             catch (Exception ex)
@@ -106,6 +118,8 @@ namespace WebApi.Controllers
             try
             {
                 command.BookId = id;
+                DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
+                validator.ValidateAndThrow(command);
                 command.Handler();
             }
             catch (Exception ex)
