@@ -12,12 +12,16 @@ namespace WebApi.BookOperations.GetBookDetail
     {
         private readonly BookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
+
         public int BookId { get; set; }
+
         public GetBookDetailQuery(BookStoreDbContext dbContext, IMapper mapper )
         {
             _dbContext = dbContext;
             _mapper = mapper;
         }
+
+
         public BookDetailViewModel Handler()
         {
             var book = _dbContext.Books.Where(x => x.Id == BookId).SingleOrDefault();
