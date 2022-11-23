@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: black;
+}
+header{
+    margin: 0;
+    padding:0;
+    border-bottom: 1px solid;
+    width: 100%;
+}
+
+
+.logo{
+ margin-right: 150px;
+ padding: 10px 50px;
+ text-align: center;
+ vertical-align:center;
+ font-size: 30px;
+ background-color: aqua;
+ color: white;
+ font-weight: bolder;
+ font-style: oblique;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ul{
+  margin-left: 300px;  
+}
+li{
+    display: inline-block;
+    padding: 10px;
+    /* background-color: black; */
+    list-style-type: none;
+   
+    
+}
+li a{
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: aqua;
+}
+a:hover{
+    background-color: aqua;
+    color: white;
+}
+.box{
+    float: left;
+}
+.container{
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.content{
+    width: 21%;
+    float: left;
+    margin:3%;
+    padding: 3%;
+    border: 1px;
+    border-radius: 10px;
+    background-color: aqua;
+}
+.content> h3,p{
+    color: whitesmoke;
+}
+.clear{
+    clear: both;
+}
+footer{
+border-top: 1px solid;
+background-color: black !important;
+padding: 10px;
+height: 300px;
+}
+.foot{
+    width: 21%;
+    float: left;
+    margin:3%;
+    padding: 3%;
+    border: 1px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+}
+.color-black{
+color:black;
+}
+
